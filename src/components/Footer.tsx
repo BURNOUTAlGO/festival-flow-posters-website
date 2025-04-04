@@ -1,11 +1,17 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Facebook, Instagram, Twitter, Youtube, Zap, Mail, ChevronRight } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
 const Footer = () => {
+  const navigate = useNavigate();
+  
+  const handleNavigation = (path: string) => {
+    navigate(path);
+  };
+
   return (
     <footer className="bg-festival-dark relative overflow-hidden">
       {/* Animated background elements */}
@@ -16,12 +22,15 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Logo and about */}
           <div className="space-y-6">
-            <Link to="/" className="flex items-center gap-2">
+            <div 
+              onClick={() => handleNavigation('/')} 
+              className="flex items-center gap-2 cursor-pointer"
+            >
               <Zap size={24} className="text-festival-purple" />
               <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-festival-purple via-festival-blue to-festival-pink">
                 FestiFlow
               </span>
-            </Link>
+            </div>
             <p className="text-gray-400">
               The premier destination for festival and event poster designs, showcasing the most creative promotional artwork from around the world.
             </p>
@@ -46,28 +55,40 @@ const Footer = () => {
             <h3 className="text-white font-bold text-lg mb-6">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/posters" className="text-gray-400 hover:text-festival-purple transition-colors flex items-center gap-2">
+                <div 
+                  onClick={() => handleNavigation('/posters')} 
+                  className="text-gray-400 hover:text-festival-purple transition-colors flex items-center gap-2 cursor-pointer"
+                >
                   <ChevronRight size={16} />
                   <span>Browse Posters</span>
-                </Link>
+                </div>
               </li>
               <li>
-                <Link to="/events" className="text-gray-400 hover:text-festival-purple transition-colors flex items-center gap-2">
+                <div 
+                  onClick={() => handleNavigation('/events')} 
+                  className="text-gray-400 hover:text-festival-purple transition-colors flex items-center gap-2 cursor-pointer"
+                >
                   <ChevronRight size={16} />
                   <span>Upcoming Events</span>
-                </Link>
+                </div>
               </li>
               <li>
-                <Link to="/artists" className="text-gray-400 hover:text-festival-purple transition-colors flex items-center gap-2">
+                <div 
+                  onClick={() => handleNavigation('/artists')} 
+                  className="text-gray-400 hover:text-festival-purple transition-colors flex items-center gap-2 cursor-pointer"
+                >
                   <ChevronRight size={16} />
                   <span>Featured Artists</span>
-                </Link>
+                </div>
               </li>
               <li>
-                <Link to="/submissions" className="text-gray-400 hover:text-festival-purple transition-colors flex items-center gap-2">
+                <div 
+                  onClick={() => handleNavigation('/submissions')} 
+                  className="text-gray-400 hover:text-festival-purple transition-colors flex items-center gap-2 cursor-pointer"
+                >
                   <ChevronRight size={16} />
                   <span>Submit Your Work</span>
-                </Link>
+                </div>
               </li>
             </ul>
           </div>
