@@ -1,11 +1,12 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FeaturedEvents from '@/components/FeaturedEvents';
 import EventCard from '@/components/EventCard';
 import ThemeSwitcher from '@/components/ThemeSwitcher';
+import { images, preloadImages } from '@/utils/imageData';
 
 const upcomingEvents = [
   {
@@ -13,7 +14,7 @@ const upcomingEvents = [
     title: "Diwali Celebration 2025",
     date: "October 15-17, 2025",
     location: "Mumbai, India",
-    imageUrl: "https://images.unsplash.com/photo-1605198988864-b47451cc95c2?w=800&auto=format&fit=crop",
+    imageUrl: images.diwali,
     eventDate: new Date("2025-10-15T18:00:00")
   },
   {
@@ -21,7 +22,7 @@ const upcomingEvents = [
     title: "Web Summit India",
     date: "March 22-24, 2025",
     location: "Bangalore, India",
-    imageUrl: "https://images.unsplash.com/photo-1530893609608-32a9af3aa95c?w=800&auto=format&fit=crop",
+    imageUrl: images.webSummit,
     eventDate: new Date("2025-03-22T09:00:00")
   },
   {
@@ -29,7 +30,7 @@ const upcomingEvents = [
     title: "Holi Festival 2025",
     date: "March 8-10, 2025",
     location: "Jaipur, India",
-    imageUrl: "https://images.unsplash.com/photo-1576398289164-c94debf99ecd?w=800&auto=format&fit=crop",
+    imageUrl: images.holi,
     eventDate: new Date("2025-03-08T10:30:00")
   },
   {
@@ -37,24 +38,34 @@ const upcomingEvents = [
     title: "AI Conference India",
     date: "April 5-7, 2025",
     location: "Chennai, India",
-    imageUrl: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=800&auto=format&fit=crop",
+    imageUrl: images.aiConference,
     eventDate: new Date("2025-04-05T09:00:00")
   }
 ];
 
 const Events = () => {
+  useEffect(() => {
+    // Preload images for better user experience
+    preloadImages();
+  }, []);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="min-h-screen bg-background text-foreground"
+      className="min-h-screen bg-background text-foreground relative"
     >
       <Navbar />
       <ThemeSwitcher />
       
-      <main className="pt-32 pb-20">
-        <div className="container mx-auto px-4">
+      <main className="pt-32 pb-20 relative">
+        <div className="absolute top-0 left-0 w-full h-full z-0">
+          <div className="absolute top-40 left-1/4 w-72 h-72 bg-[var(--festival-purple)]/10 rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-20 right-1/4 w-80 h-80 bg-[var(--festival-blue)]/10 rounded-full filter blur-3xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold text-center mb-8 bg-clip-text text-transparent bg-gradient-to-r from-[var(--festival-purple)] via-[var(--festival-blue)] to-[var(--festival-pink)]">
             Upcoming Events
           </h1>
