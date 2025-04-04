@@ -21,6 +21,27 @@ const themes: ThemeOption[] = [
     className: 'theme-default' 
   },
   { 
+    name: 'Holi', 
+    primary: '#FC5C9C',
+    secondary: '#5EFCE8',
+    accent: '#FFB344',
+    className: 'theme-holi' 
+  },
+  { 
+    name: 'Diwali', 
+    primary: '#FFB21E',
+    secondary: '#FF4D6D',
+    accent: '#FCD757',
+    className: 'theme-diwali' 
+  },
+  { 
+    name: 'Tech', 
+    primary: '#3A86FF',
+    secondary: '#00C6FF',
+    accent: '#9D4EDD',
+    className: 'theme-tech' 
+  },
+  { 
     name: 'Neon', 
     primary: '#00FF66',
     secondary: '#FF00FF',

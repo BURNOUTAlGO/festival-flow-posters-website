@@ -19,7 +19,7 @@ const HeroSection = () => {
       
       elements.forEach((el) => {
         const speed = parseFloat((el as HTMLElement).dataset.speed || '0');
-        const xOffset = (x - 0.5) * speed * 50; // Adjust the multiplier for stronger/weaker effect
+        const xOffset = (x - 0.5) * speed * 50; 
         const yOffset = (y - 0.5) * speed * 50;
         
         (el as HTMLElement).style.transform = `translate(${xOffset}px, ${yOffset}px)`;
@@ -50,8 +50,8 @@ const HeroSection = () => {
         <div className="absolute top-[15%] right-[10%] parallax-element" data-speed="0.3">
           <div className="w-40 h-56 festival-card rotate-6 animate-float opacity-90">
             <img 
-              src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81" 
-              alt="Festival poster" 
+              src="https://images.unsplash.com/photo-1605198988864-b47451cc95c2?w=800&auto=format&fit=crop" 
+              alt="Diwali Festival" 
               className="w-full h-full object-cover"
             />
           </div>
@@ -59,8 +59,8 @@ const HeroSection = () => {
         <div className="absolute top-[50%] left-[8%] parallax-element" data-speed="-0.2">
           <div className="w-48 h-64 festival-card -rotate-12 animate-float-reverse opacity-90">
             <img 
-              src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5" 
-              alt="Festival poster" 
+              src="https://images.unsplash.com/photo-1576398289164-c94debf99ecd?w=800&auto=format&fit=crop" 
+              alt="Holi Festival" 
               className="w-full h-full object-cover"
             />
           </div>
@@ -68,8 +68,8 @@ const HeroSection = () => {
         <div className="absolute bottom-[20%] right-[15%] parallax-element" data-speed="0.5">
           <div className="w-36 h-52 festival-card rotate-12 animate-float delay-200 opacity-90">
             <img 
-              src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07" 
-              alt="Festival poster" 
+              src="https://images.unsplash.com/photo-1530893609608-32a9af3aa95c?w=800&auto=format&fit=crop" 
+              alt="Tech Conference" 
               className="w-full h-full object-cover"
             />
           </div>
@@ -80,7 +80,7 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           <motion.h1 
-            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-gray-300"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold font-display mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-gray-300"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -94,7 +94,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Explore the world's most creative festival and event posters in one vibrant, animated showcase.
+            Explore India's most vibrant festivals and tech event posters in one dynamic, animated showcase.
           </motion.p>
           
           <motion.div 
@@ -103,7 +103,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <Button className="bg-gradient-to-r from-[var(--festival-purple)] to-[var(--festival-blue)] hover:opacity-90 transition-opacity text-white px-8 py-6 text-lg">
+            <Button className="bg-gradient-to-r from-[var(--festival-purple)] to-[var(--festival-blue)] hover:opacity-90 transition-opacity px-8 py-6 text-white text-lg font-display">
               Explore Posters
               <ArrowRight className="ml-2" />
             </Button>
@@ -122,7 +122,7 @@ const HeroSection = () => {
               <div className="w-16 h-16 rounded-full bg-[var(--festival-purple)]/20 flex items-center justify-center mb-3 animate-pulse-glow">
                 <Image className="w-8 h-8 text-[var(--festival-purple)]" />
               </div>
-              <h3 className="text-2xl font-bold text-white">5,000+</h3>
+              <h3 className="text-2xl font-bold font-display text-white">5,000+</h3>
               <p className="text-gray-400">Poster Designs</p>
             </div>
             
@@ -130,7 +130,7 @@ const HeroSection = () => {
               <div className="w-16 h-16 rounded-full bg-[var(--festival-blue)]/20 flex items-center justify-center mb-3 animate-pulse-glow">
                 <CalendarDays className="w-8 h-8 text-[var(--festival-blue)]" />
               </div>
-              <h3 className="text-2xl font-bold text-white">1,200+</h3>
+              <h3 className="text-2xl font-bold font-display text-white">1,200+</h3>
               <p className="text-gray-400">Events Featured</p>
             </div>
             
@@ -138,7 +138,7 @@ const HeroSection = () => {
               <div className="w-16 h-16 rounded-full bg-[var(--festival-pink)]/20 flex items-center justify-center mb-3 animate-pulse-glow">
                 <Users className="w-8 h-8 text-[var(--festival-pink)]" />
               </div>
-              <h3 className="text-2xl font-bold text-white">800+</h3>
+              <h3 className="text-2xl font-bold font-display text-white">800+</h3>
               <p className="text-gray-400">Artists Showcased</p>
             </div>
           </motion.div>

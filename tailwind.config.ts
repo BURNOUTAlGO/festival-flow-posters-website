@@ -19,6 +19,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				sans: ['Poppins', 'sans-serif'],
+				display: ['Space Grotesk', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -67,7 +71,11 @@ export default {
           purple: '#8B5CF6',
           blue: '#0EA5E9',
           pink: '#D946EF',
-          dark: '#1A1F2C'
+          dark: '#1A1F2C',
+          orange: '#F97316',
+          red: '#EF4444',
+          green: '#10B981',
+          yellow: '#FBBF24'
         }
 			},
 			borderRadius: {

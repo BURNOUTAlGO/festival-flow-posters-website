@@ -16,66 +16,93 @@ interface Poster {
   likes: number;
 }
 
-// Demo poster data
+// Demo poster data with Indian festivals and tech events
 const posters: Poster[] = [
   {
     id: 1,
-    title: "Electric Sky Festival",
-    image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=800",
-    date: "May 15-17, 2025",
-    location: "Los Angeles, CA",
-    category: "Music",
-    likes: 284
+    title: "Diwali Festival of Lights",
+    image: "https://images.unsplash.com/photo-1605198988864-b47451cc95c2?w=800&auto=format&fit=crop",
+    date: "October 15-17, 2025",
+    location: "Mumbai, India",
+    category: "Festival",
+    likes: 348
   },
   {
     id: 2,
-    title: "Digital Dreams Expo",
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800",
-    date: "June 22-24, 2025",
-    location: "New York, NY",
+    title: "TechCon India 2025",
+    image: "https://images.unsplash.com/photo-1530893609608-32a9af3aa95c?w=800&auto=format&fit=crop",
+    date: "March 22-24, 2025",
+    location: "Bangalore, India",
     category: "Tech",
-    likes: 176
+    likes: 276
   },
   {
     id: 3,
-    title: "Starlight Gathering",
-    image: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?q=80&w=800",
-    date: "July 8-10, 2025",
-    location: "Austin, TX",
-    category: "Music",
-    likes: 312
+    title: "Holi Color Festival",
+    image: "https://images.unsplash.com/photo-1576398289164-c94debf99ecd?w=800&auto=format&fit=crop",
+    date: "March 8-10, 2025",
+    location: "Jaipur, India",
+    category: "Festival",
+    likes: 412
   },
   {
     id: 4,
-    title: "Forest Illumination",
-    image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?q=80&w=800",
+    title: "Web Summit Delhi",
+    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop",
     date: "August 19-21, 2025",
-    location: "Portland, OR",
-    category: "Art",
+    location: "New Delhi, India",
+    category: "Tech",
     likes: 249
   },
   {
     id: 5,
-    title: "Rhythm & Beats",
-    image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=800",
-    date: "September 5-7, 2025",
-    location: "Miami, FL",
-    category: "Music",
-    likes: 198
+    title: "Navratri Dance Festival",
+    image: "https://images.unsplash.com/photo-1660651868158-40880f594c0b?w=800&auto=format&fit=crop",
+    date: "September 25-October 3, 2025",
+    location: "Gujarat, India",
+    category: "Festival",
+    likes: 318
   },
   {
     id: 6,
-    title: "Future Cinema Fest",
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800",
-    date: "October 12-14, 2025",
-    location: "Chicago, IL",
-    category: "Film",
-    likes: 165
+    title: "Hackathon 2025",
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop",
+    date: "July 12-14, 2025",
+    location: "Hyderabad, India",
+    category: "Tech",
+    likes: 185
+  },
+  {
+    id: 7,
+    title: "Ganesh Chaturthi",
+    image: "https://images.unsplash.com/photo-1600181982031-7f8e8d1a8f67?w=800&auto=format&fit=crop",
+    date: "September 2-11, 2025",
+    location: "Pune, India",
+    category: "Festival",
+    likes: 275
+  },
+  {
+    id: 8,
+    title: "AI Conference India",
+    image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=800&auto=format&fit=crop",
+    date: "April 5-7, 2025",
+    location: "Chennai, India",
+    category: "Tech",
+    likes: 196
+  },
+  {
+    id: 9,
+    title: "Durga Puja Celebration",
+    image: "https://images.unsplash.com/photo-1603228254119-e6a4d095dc59?w=800&auto=format&fit=crop",
+    date: "October 7-15, 2025",
+    location: "Kolkata, India",
+    category: "Festival",
+    likes: 327
   }
 ];
 
 // Filter categories
-const categories = ["All", "Music", "Art", "Tech", "Film", "Dance"];
+const categories = ["All", "Festival", "Tech", "Music", "Art", "Dance"];
 
 const PosterGallery = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -88,13 +115,13 @@ const PosterGallery = () => {
   return (
     <section className="py-24 relative overflow-hidden" id="gallery">
       {/* Background elements */}
-      <div className="absolute -top-40 -right-40 w-96 h-96 bg-festival-purple/10 rounded-full filter blur-3xl"></div>
-      <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-festival-blue/10 rounded-full filter blur-3xl"></div>
+      <div className="absolute -top-40 -right-40 w-96 h-96 bg-[var(--festival-purple)]/10 rounded-full filter blur-3xl"></div>
+      <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-[var(--festival-blue)]/10 rounded-full filter blur-3xl"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col items-center mb-16">
           <motion.h2 
-            className="text-4xl font-bold mb-5 text-center bg-clip-text text-transparent bg-gradient-to-r from-festival-purple to-festival-pink"
+            className="text-4xl font-bold mb-5 text-center bg-clip-text text-transparent bg-gradient-to-r from-[var(--festival-purple)] to-[var(--festival-pink)]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -107,7 +134,7 @@ const PosterGallery = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Browse our curated collection of stunning festival and event posters from around the world.
+            Browse our curated collection of stunning Indian festival and tech event posters celebrating culture and innovation.
           </motion.p>
           
           {/* Filter Categories */}
@@ -123,7 +150,7 @@ const PosterGallery = () => {
                 onClick={() => setSelectedCategory(category)}
                 variant={selectedCategory === category ? "default" : "outline"}
                 className={selectedCategory === category 
-                  ? "bg-festival-purple hover:bg-festival-purple/90 text-white" 
+                  ? "bg-[var(--festival-purple)] hover:bg-[var(--festival-purple)]/90 text-white" 
                   : "border-white/20 hover:bg-white/10 text-white"
                 }
               >
@@ -156,7 +183,11 @@ const PosterGallery = () => {
                   />
                   
                   {/* Category badge */}
-                  <Badge className="absolute top-4 left-4 bg-festival-purple/80 hover:bg-festival-purple text-white">
+                  <Badge className={`absolute top-4 left-4 ${
+                    poster.category === 'Festival' 
+                      ? 'bg-[var(--festival-pink)]/80 hover:bg-[var(--festival-pink)]' 
+                      : 'bg-[var(--festival-blue)]/80 hover:bg-[var(--festival-blue)]'
+                  } text-white`}>
                     {poster.category}
                   </Badge>
                   
@@ -186,7 +217,7 @@ const PosterGallery = () => {
                       </Button>
                       
                       <div className="flex items-center gap-1 text-white/90">
-                        <Heart size={16} className="text-festival-pink" />
+                        <Heart size={16} className="text-[var(--festival-pink)]" />
                         <span>{poster.likes}</span>
                       </div>
                     </div>
@@ -198,7 +229,7 @@ const PosterGallery = () => {
         </div>
         
         <div className="flex justify-center mt-16">
-          <Button className="bg-gradient-to-r from-festival-purple to-festival-blue hover:opacity-90 transition-opacity px-8 py-6 text-white text-lg">
+          <Button className="bg-gradient-to-r from-[var(--festival-purple)] to-[var(--festival-blue)] hover:opacity-90 transition-opacity px-8 py-6 text-white text-lg font-display">
             View All Posters
           </Button>
         </div>

@@ -10,35 +10,35 @@ import ThemeSwitcher from '@/components/ThemeSwitcher';
 const upcomingEvents = [
   {
     id: 1,
-    title: "Neon Nights Music Festival",
-    date: "June 15-17, 2025",
-    location: "Dreamland Arena, Los Angeles",
-    imageUrl: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81",
-    eventDate: new Date("2025-06-15T18:00:00")
+    title: "Diwali Celebration 2025",
+    date: "October 15-17, 2025",
+    location: "Mumbai, India",
+    imageUrl: "https://images.unsplash.com/photo-1605198988864-b47451cc95c2?w=800&auto=format&fit=crop",
+    eventDate: new Date("2025-10-15T18:00:00")
   },
   {
     id: 2,
-    title: "Digital Dreams Convention",
-    date: "August 22-24, 2025",
-    location: "Tech Center, San Francisco",
-    imageUrl: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5",
-    eventDate: new Date("2025-08-22T09:00:00")
+    title: "Web Summit India",
+    date: "March 22-24, 2025",
+    location: "Bangalore, India",
+    imageUrl: "https://images.unsplash.com/photo-1530893609608-32a9af3aa95c?w=800&auto=format&fit=crop",
+    eventDate: new Date("2025-03-22T09:00:00")
   },
   {
     id: 3,
-    title: "Nature's Harmony Festival",
-    date: "July 8-10, 2025",
-    location: "Green Valley Park, Portland",
-    imageUrl: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07",
-    eventDate: new Date("2025-07-08T16:30:00")
+    title: "Holi Festival 2025",
+    date: "March 8-10, 2025",
+    location: "Jaipur, India",
+    imageUrl: "https://images.unsplash.com/photo-1576398289164-c94debf99ecd?w=800&auto=format&fit=crop",
+    eventDate: new Date("2025-03-08T10:30:00")
   },
   {
     id: 4,
-    title: "Starlight Cinema Festival",
-    date: "September 5-7, 2025",
-    location: "Moonlight Gardens, Seattle",
-    imageUrl: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb",
-    eventDate: new Date("2025-09-05T20:00:00")
+    title: "AI Conference India",
+    date: "April 5-7, 2025",
+    location: "Chennai, India",
+    imageUrl: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=800&auto=format&fit=crop",
+    eventDate: new Date("2025-04-05T09:00:00")
   }
 ];
 
@@ -59,7 +59,7 @@ const Events = () => {
             Upcoming Events
           </h1>
           <p className="text-lg text-center text-gray-300 max-w-3xl mx-auto mb-16">
-            Discover exciting festivals and events happening soon, featuring amazing lineups, experiences, and artistic showcases.
+            Discover exciting Indian festivals and tech events happening soon, featuring amazing cultural experiences and innovative showcases.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
@@ -81,7 +81,7 @@ const Events = () => {
             ))}
           </div>
           
-          <h2 className="text-3xl font-bold text-center mb-8 mt-16">More Events</h2>
+          <h2 className="text-3xl font-bold font-display text-center mb-8 mt-16 text-white">More Exciting Events</h2>
           <FeaturedEvents />
         </div>
       </main>
