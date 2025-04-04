@@ -34,6 +34,28 @@
     --ring: 270 91% 65%;
 
     --radius: 0.5rem;
+    
+    --festival-purple: #8B5CF6;
+    --festival-blue: #0EA5E9;
+    --festival-pink: #D946EF;
+  }
+  
+  .theme-neon {
+    --festival-purple: #00FF66;
+    --festival-blue: #FF00FF;
+    --festival-pink: #FFFF00;
+  }
+  
+  .theme-sunset {
+    --festival-purple: #FF6B6B;
+    --festival-blue: #FFD93D;
+    --festival-pink: #FF8E3C;
+  }
+  
+  .theme-ocean {
+    --festival-purple: #2C73D2;
+    --festival-blue: #0ABDE3;
+    --festival-pink: #48DBFB;
   }
 }
 
@@ -70,7 +92,7 @@
   }
   
   .animated-gradient {
-    background: linear-gradient(120deg, #8B5CF6, #0EA5E9, #D946EF);
+    background: linear-gradient(120deg, var(--festival-purple), var(--festival-blue), var(--festival-pink));
     background-size: 200% 200%;
     animation: gradientAnimation 15s ease infinite;
   }
@@ -100,5 +122,9 @@
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  .festival-card {
+    @apply bg-gradient-to-br from-[var(--festival-purple)/20] to-[var(--festival-blue)/20] backdrop-blur-sm border border-white/10 rounded-lg shadow-lg overflow-hidden;
   }
 }

@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CalendarDays, Image, Users } from 'lucide-react';
+import ThemeSwitcher from './ThemeSwitcher';
 
 const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -34,23 +35,44 @@ const HeroSection = () => {
       ref={heroRef}
       className="relative min-h-screen flex items-center overflow-hidden pt-20"
     >
+      {/* Theme Switcher */}
+      <ThemeSwitcher />
+      
       {/* Animated background elements */}
       <div className="absolute top-0 left-0 w-full h-full">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-festival-purple/20 rounded-full filter blur-3xl parallax-element" data-speed="-0.5"></div>
-        <div className="absolute bottom-1/3 right-1/3 w-80 h-80 bg-festival-blue/20 rounded-full filter blur-3xl parallax-element" data-speed="0.8"></div>
-        <div className="absolute top-2/3 left-1/2 w-72 h-72 bg-festival-pink/20 rounded-full filter blur-3xl parallax-element" data-speed="0.6"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[var(--festival-purple)]/20 rounded-full filter blur-3xl parallax-element" data-speed="-0.5"></div>
+        <div className="absolute bottom-1/3 right-1/3 w-80 h-80 bg-[var(--festival-blue)]/20 rounded-full filter blur-3xl parallax-element" data-speed="0.8"></div>
+        <div className="absolute top-2/3 left-1/2 w-72 h-72 bg-[var(--festival-pink)]/20 rounded-full filter blur-3xl parallax-element" data-speed="0.6"></div>
       </div>
 
-      {/* Floating poster elements */}
+      {/* Floating festival poster elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-[15%] right-[10%] parallax-element" data-speed="0.3">
-          <div className="w-40 h-56 bg-gradient-to-br from-festival-purple to-festival-blue rounded-lg shadow-lg rotate-6 animate-float opacity-80"></div>
+          <div className="w-40 h-56 festival-card rotate-6 animate-float opacity-90">
+            <img 
+              src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81" 
+              alt="Festival poster" 
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
         <div className="absolute top-[50%] left-[8%] parallax-element" data-speed="-0.2">
-          <div className="w-48 h-64 bg-gradient-to-tr from-festival-blue to-festival-pink rounded-lg shadow-lg -rotate-12 animate-float-reverse opacity-80"></div>
+          <div className="w-48 h-64 festival-card -rotate-12 animate-float-reverse opacity-90">
+            <img 
+              src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5" 
+              alt="Festival poster" 
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
         <div className="absolute bottom-[20%] right-[15%] parallax-element" data-speed="0.5">
-          <div className="w-36 h-52 bg-gradient-to-br from-festival-pink to-festival-purple rounded-lg shadow-lg rotate-12 animate-float delay-200 opacity-80"></div>
+          <div className="w-36 h-52 festival-card rotate-12 animate-float delay-200 opacity-90">
+            <img 
+              src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07" 
+              alt="Festival poster" 
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
       </div>
 
@@ -81,7 +103,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <Button className="bg-gradient-to-r from-festival-purple to-festival-blue hover:opacity-90 transition-opacity text-white px-8 py-6 text-lg">
+            <Button className="bg-gradient-to-r from-[var(--festival-purple)] to-[var(--festival-blue)] hover:opacity-90 transition-opacity text-white px-8 py-6 text-lg">
               Explore Posters
               <ArrowRight className="ml-2" />
             </Button>
@@ -97,24 +119,24 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <div className="flex flex-col items-center">
-              <div className="w-16 h-16 rounded-full bg-festival-purple/20 flex items-center justify-center mb-3 animate-pulse-glow">
-                <Image className="w-8 h-8 text-festival-purple" />
+              <div className="w-16 h-16 rounded-full bg-[var(--festival-purple)]/20 flex items-center justify-center mb-3 animate-pulse-glow">
+                <Image className="w-8 h-8 text-[var(--festival-purple)]" />
               </div>
               <h3 className="text-2xl font-bold text-white">5,000+</h3>
               <p className="text-gray-400">Poster Designs</p>
             </div>
             
             <div className="flex flex-col items-center">
-              <div className="w-16 h-16 rounded-full bg-festival-blue/20 flex items-center justify-center mb-3 animate-pulse-glow">
-                <CalendarDays className="w-8 h-8 text-festival-blue" />
+              <div className="w-16 h-16 rounded-full bg-[var(--festival-blue)]/20 flex items-center justify-center mb-3 animate-pulse-glow">
+                <CalendarDays className="w-8 h-8 text-[var(--festival-blue)]" />
               </div>
               <h3 className="text-2xl font-bold text-white">1,200+</h3>
               <p className="text-gray-400">Events Featured</p>
             </div>
             
             <div className="flex flex-col items-center">
-              <div className="w-16 h-16 rounded-full bg-festival-pink/20 flex items-center justify-center mb-3 animate-pulse-glow">
-                <Users className="w-8 h-8 text-festival-pink" />
+              <div className="w-16 h-16 rounded-full bg-[var(--festival-pink)]/20 flex items-center justify-center mb-3 animate-pulse-glow">
+                <Users className="w-8 h-8 text-[var(--festival-pink)]" />
               </div>
               <h3 className="text-2xl font-bold text-white">800+</h3>
               <p className="text-gray-400">Artists Showcased</p>
